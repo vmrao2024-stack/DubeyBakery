@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubey Bakery | Bhilai's Heritage Bakery Since 1970</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: {
+                            DEFAULT: '#C86D51',
+                            dark: '#A85238',
+                            light: '#E29578'
+                        },
+                        caramel: '#DDA15E',
+                        cream: '#FAF6F0',
+                        vanilla: '#FFFDF9',
+                        mocha: '#2D2421',
+                        cocoa: '#4A3B32',
+                        olive: '#6B705C'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FAF6F0;
+            color: #2D2421;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-pattern {
+            background-color: #2D2421;
+            background-image: radial-gradient(#DDA15E 0.75px, transparent 0.75px), radial-gradient(#DDA15E 0.75px, #2D2421 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.98;
+        }
+        .glass-card {
+            background: rgba(255, 253, 249, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(221, 161, 94, 0.2);
+        }
+        .smooth-shadow {
+            box-shadow: 0 10px 30px -5px rgba(45, 36, 33, 0.08);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-caramel selection:text-white">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-caramel/20 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full bg-terracotta text-cream flex items-center justify-center font-serif text-2xl font-bold shadow-md group-hover:scale-105 transition-transform">
+                    D
+                </div>
+                <div>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-mocha block leading-none">Dubey Bakery</span>
+                    <span class="text-xs font-medium text-terracotta tracking-widest uppercase">Since 1970 • Bhilai</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-cocoa">
+                <a href="#about" class="hover:text-terracotta transition-colors">Our Story</a>
+                <a href="#menu" class="hover:text-terracotta transition-colors">Menu Delights</a>
+                <a href="#gallery" class="hover:text-terracotta transition-colors">Gallery</a>
+                <a href="#order" class="hover:text-terracotta transition-colors">Custom Orders</a>
+                <a href="#reviews" class="hover:text-terracotta transition-colors">Nostalgia Wall</a>
+                <a href="#contact" class="hover:text-terracotta transition-colors">Visit Us</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/918827370555?text=Hello%20Dubey%20Bakery!%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-full font-medium text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    WhatsApp Order
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-mocha hover:text-terracotta focus:outline-none">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile dropdown nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-vanilla border-b border-caramel/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="mobile-nav-link block py-2 text-cocoa hover:text-terracotta border-b border-cream">Our Story</a>
+            <a href="#menu" class="mobile-nav-link block py-2 text-cocoa hover:text-terracotta border-b border-cream">Menu Delights</a>
+            <a href="#gallery" class="mobile-nav-link block py-2 text-cocoa hover:text-terracotta border-b border-cream">Gallery</a>
+            <a href="#order" class="mobile-nav-link block py-2 text-cocoa hover:text-terracotta border-b border-cream">Custom Cake Builder</a>
+            <a href="#reviews" class="mobile-nav-link block py-2 text-cocoa hover:text-terracotta border-b border-cream">Nostalgia Wall</a>
+            <a href="#contact" class="mobile-nav-link block py-2 text-cocoa hover:text-terracotta">Visit Us</a>
+            <a href="https://wa.me/918827370555?text=Hello%20Dubey%20Bakery!%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="w-full mt-3 inline-flex items-center justify-center gap-2 bg-emerald-700 text-white px-5 py-3 rounded-xl font-medium text-sm">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                WhatsApp Order
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-16 lg:py-24">
+        <!-- Background Banner Decorative Elements -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2000&auto=format&fit=crop" alt="Bakery artisan background" class="w-full h-full object-cover object-center brightness-[0.35]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-mocha via-mocha/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-cream">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-caramel/20 border border-caramel/40 backdrop-blur-md mb-6">
+                <i data-lucide="sparkles" class="w-4 h-4 text-caramel"></i>
+                <span class="text-xs sm:text-sm font-medium tracking-wide uppercase text-caramel">Sector 4, Bhilai's Favorite Since 1970</span>
+            </div>
+
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Baking Memories & Warm Traditions for 50+ Years
+            </h1>
+
+            <p class="text-lg sm:text-xl text-cream/90 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                From after-school patties and buttery Nankhatais to milestone birthday cakes, experience the nostalgic flavors that built Bhilai's sweetest moments.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/918827370555?text=Hello%20Dubey%20Bakery!%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-semibold text-base transition-all shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Order on WhatsApp
+                </a>
+                <a href="#menu" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-vanilla/10 hover:bg-vanilla/20 border border-cream/30 text-cream px-8 py-4 rounded-full font-medium text-base transition-all backdrop-blur-sm">
+                    <i data-lucide="utensils-crossed" class="w-5 h-5"></i>
+                    Explore Menu
+                </a>
+            </div>
+
+            <!-- Quick highlights -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-cream/10 text-center">
+                <div class="p-3">
+                    <span class="font-serif text-2xl sm:text-3xl font-bold text-caramel block">54+</span>
+                    <span class="text-xs sm:text-sm text-cream/70">Years of Heritage</span>
+                </div>
+                <div class="p-3">
+                    <span class="font-serif text-2xl sm:text-3xl font-bold text-caramel block">100%</span>
+                    <span class="text-xs sm:text-sm text-cream/70">Fresh Baked Daily</span>
+                </div>
+                <div class="p-3">
+                    <span class="font-serif text-2xl sm:text-3xl font-bold text-caramel block">3 Generations</span>
+                    <span class="text-xs sm:text-sm text-cream/70">Loyal Local Patrons</span>
+                </div>
+                <div class="p-3">
+                    <span class="font-serif text-2xl sm:text-3xl font-bold text-caramel block">Sector 4</span>
+                    <span class="text-xs sm:text-sm text-cream/70">Near SBI Bank, Bhilai</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage & Storytelling Section -->
+    <section id="about" class="py-20 lg:py-28 bg-cream relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                <!-- Left Column - Image collage -->
+                <div class="relative">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-vanilla relative z-10">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1000&auto=format&fit=crop" alt="Traditional bakery oven fresh bread" class="w-full h-full object-cover">
+                    </div>
+                    <div class="hidden sm:block absolute -bottom-10 -right-6 w-3/5 aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-vanilla z-20">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop" alt="Baking process and flour" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Badge overlay -->
+                    <div class="absolute -top-6 -left-6 z-30 bg-terracotta text-cream p-5 rounded-2xl shadow-xl flex items-center gap-3">
+                        <i data-lucide="award" class="w-8 h-8 text-caramel"></i>
+                        <div>
+                            <p class="font-serif font-bold text-lg leading-tight">Est. 1970</p>
+                            <p class="text-xs opacity-90">Bhilai's Original Bakehouse</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Narrative Story -->
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 text-terracotta font-medium text-sm tracking-wider uppercase">
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                        <span>The Tale of Dubey Bakery</span>
+                    </div>
+
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-mocha leading-tight">
+                        A Legacy Built on Warm Ovens & Unchanged Recipes
+                    </h2>
+
+                    <p class="text-cocoa/90 leading-relaxed text-base sm:text-lg">
+                        In the year 1970, right near the iconic SBI Bank in Sector 4, Bhilai, **Dubey Bakery** lit its first oven. What started as a modest neighborhood bakery quickly became the beating sweet heart of the town.
+                    </p>
+
+                    <p class="text-cocoa/80 leading-relaxed text-base">
+                        For decades, generations of Bhilai school children have walked through our doors after class for warm, crispy veggie patties and golden butter biscuits. Families gathered here to order custom birthday cakes, celebrating milestones with flavors that became part of their sweetest childhood memories.
+                    </p>
+
+                    <p class="text-cocoa/80 leading-relaxed text-base">
+                        Today, even as the world around us evolves, our core remains untouched: pure butter, time-honored slow baking, and the signature warmth that makes every visit feel like coming home.
+                    </p>
+
+                    <div class="pt-4 grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-vanilla border border-caramel/20 flex items-start gap-3">
+                            <i data-lucide="heart" class="w-6 h-6 text-terracotta shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-serif font-bold text-mocha">Handcrafted Care</h4>
+                                <p class="text-xs text-cocoa/70 mt-1">Baked with authentic recipes handed down over 50 years.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-vanilla border border-caramel/20 flex items-start gap-3">
+                            <i data-lucide="smile" class="w-6 h-6 text-terracotta shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-serif font-bold text-mocha">Community Love</h4>
+                                <p class="text-xs text-cocoa/70 mt-1">Serving three generations of Bhilai's cherished families.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Delights Section -->
+    <section id="menu" class="py-20 lg:py-28 bg-vanilla relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-terracotta font-medium text-sm tracking-widest uppercase">Fresh From Our Ovens</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-mocha mt-2 mb-4">Our Signature Delights</h2>
+                <p class="text-cocoa/80 text-base sm:text-lg">Explore our curated selection of freshly baked cakes, nostalgic biscuits, savories, and handcrafted gifts.</p>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8" id="menu-filters">
+                    <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-terracotta text-cream shadow-sm">All Items</button>
+                    <button data-filter="cakes" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-cream text-cocoa hover:bg-caramel/20 border border-caramel/20">Cakes & Pastries</button>
+                    <button data-filter="biscuits" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-cream text-cocoa hover:bg-caramel/20 border border-caramel/20">Bakery & Biscuits</button>
+                    <button data-filter="savory" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-cream text-cocoa hover:bg-caramel/20 border border-caramel/20">Hot Savories</button>
+                    <button data-filter="gifts" class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-cream text-cocoa hover:bg-caramel/20 border border-caramel/20">Gifts & Chocolates</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="menu-grid">
+                <!-- Items populated via JavaScript for clean maintainability & interactivity -->
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-sm text-cocoa/70 mb-4">Need something custom or have special dietary requirements?</p>
+                <a href="https://wa.me/918827370555?text=Hello%20Dubey%20Bakery!%20I%20have%20a%20special%20menu%20inquiry." target="_blank" class="inline-flex items-center gap-2 text-terracotta font-semibold hover:underline">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i> Ask for Custom Party Orders on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Order Calculator Section -->
+    <section id="order" class="py-20 lg:py-24 bg-cream border-y border-caramel/20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-vanilla rounded-3xl p-6 sm:p-10 shadow-xl border border-caramel/20 relative overflow-hidden">
+                <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-caramel/10 pointer-events-none"></div>
+
+                <div class="max-w-2xl mx-auto text-center mb-8">
+                    <span class="inline-block px-3 py-1 rounded-full bg-caramel/20 text-terracotta font-medium text-xs tracking-wider uppercase mb-3">Instant Booking Assistant</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-mocha">Design Your Custom Cake Order</h2>
+                    <p class="text-cocoa/80 text-sm sm:text-base mt-2">Specify your preferences below and instantly generate a formatted order request to send directly to our WhatsApp!</p>
+                </div>
+
+                <form id="cake-order-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-mocha uppercase tracking-wider mb-2">Cake Flavor</label>
+                            <select id="cake-flavor" class="w-full px-4 py-3 rounded-xl bg-cream border border-caramel/30 focus:border-terracotta focus:ring-1 focus:ring-terracotta outline-none text-mocha font-medium">
+                                <option value="Fresh Cream Pineapple">Fresh Cream Pineapple</option>
+                                <option value="Rich Chocolate Fudge">Rich Chocolate Fudge</option>
+                                <option value="Classic Black Forest">Classic Black Forest</option>
+                                <option value="Red Velvet Cream Cheese">Red Velvet Cream Cheese</option>
+                                <option value="Butterscotch Delight">Butterscotch Delight</option>
+                                <option value="Fruit Overload Gateau">Fruit Overload Gateau</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-mocha uppercase tracking-wider mb-2">Weight / Size</label>
+                            <select id="cake-size" class="w-full px-4 py-3 rounded-xl bg-cream border border-caramel/30 focus:border-terracotta focus:ring-1 focus:ring-terracotta outline-none text-mocha font-medium">
+                                <option value="0.5 Kg (Small Party)">0.5 Kg (Serves 4-5)</option>
+                                <option value="1.0 Kg (Family Celebration)" selected>1.0 Kg (Serves 8-10)</option>
+                                <option value="1.5 Kg (Gathering)">1.5 Kg (Serves 12-15)</option>
+                                <option value="2.0 Kg+ (Grand Celebration)">2.0 Kg+ (Grand Celebration)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-mocha uppercase tracking-wider mb-2">Message on Cake</label>
+                            <input type="text" id="cake-message" placeholder="e.g. Happy 10th Birthday Rahul!" class="w-full px-4 py-3 rounded-xl bg-cream border border-caramel/30 focus:border-terracotta focus:ring-1 focus:ring-terracotta outline-none text-mocha">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-mocha uppercase tracking-wider mb-2">Delivery/Pickup Date</label>
+                            <input type="date" id="cake-date" class="w-full px-4 py-3 rounded-xl bg-cream border border-caramel/30 focus:border-terracotta focus:ring-1 focus:ring-terracotta outline-none text-mocha">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-mocha uppercase tracking-wider mb-2">Special Instructions / Custom Design Requests</label>
+                        <textarea id="cake-notes" rows="3" placeholder="Mention photo cake requests, eggless option preference, or specific frosting preferences..." class="w-full px-4 py-3 rounded-xl bg-cream border border-caramel/30 focus:border-terracotta focus:ring-1 focus:ring-terracotta outline-none text-mocha"></textarea>
+                    </div>
+
+                    <div class="pt-4 text-center">
+                        <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-4 rounded-full font-semibold text-base transition-all shadow-lg hover:shadow-emerald-900/30">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            Send Order Enquiry via WhatsApp
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Grid -->
+    <section id="gallery" class="py-20 lg:py-28 bg-vanilla">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-terracotta font-medium text-sm tracking-widest uppercase">Glimpse Of Our Bakehouse</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-mocha mt-2 mb-4">Aesthetic Moments & Baked Craft</h2>
+                <p class="text-cocoa/80 text-base">Step inside Dubey Bakery through our visual showcase.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop', 'Artisan Chocolate Layer Cake')">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=600&auto=format&fit=crop" alt="Artisan Cake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-mocha/80 via-mocha/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-caramel text-xs font-semibold uppercase tracking-wider">Custom Cakes</span>
+                            <h4 class="text-cream font-serif font-bold text-lg">Rich Chocolate Layer Cake</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=1000&auto=format&fit=crop', 'Golden Fresh Baked Cookies')">
+                    <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=600&auto=format&fit=crop" alt="Bakery Biscuits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-mocha/80 via-mocha/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-caramel text-xs font-semibold uppercase tracking-wider">Heritage Biscuits</span>
+                            <h4 class="text-cream font-serif font-bold text-lg">Golden Butter Cookies</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1621236378699-8597faf6a176?q=80&w=1000&auto=format&fit=crop', 'Freshly Baked Savory Croissants & Rolls')">
+                    <img src="https://images.unsplash.com/photo-1621236378699-8597faf6a176?q=80&w=600&auto=format&fit=crop" alt="Fresh Savory Bakery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-mocha/80 via-mocha/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-caramel text-xs font-semibold uppercase tracking-wider">Oven Specialties</span>
+                            <h4 class="text-cream font-serif font-bold text-lg">Fresh Savory Rolls</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1519869325930-281384150729?q=80&w=1000&auto=format&fit=crop', 'Celebration Cupcakes')">
+                    <img src="https://images.unsplash.com/photo-1519869325930-281384150729?q=80&w=600&auto=format&fit=crop" alt="Cupcakes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-mocha/80 via-mocha/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-caramel text-xs font-semibold uppercase tracking-wider">Pastries</span>
+                            <h4 class="text-cream font-serif font-bold text-lg">Frosting Delights</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000&auto=format&fit=crop', 'Artisan Bakery Atmosphere')">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop" alt="Bakery counter" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-mocha/80 via-mocha/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-caramel text-xs font-semibold uppercase tracking-wider">Ambiance</span>
+                            <h4 class="text-cream font-serif font-bold text-lg">Sector 4 Bakehouse Vibe</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all" onclick="openLightbox('https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=1000&auto=format&fit=crop', 'Classic Strawberry Gateau')">
+                    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=600&auto=format&fit=crop" alt="Fruit Cake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-mocha/80 via-mocha/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <div>
+                            <span class="text-caramel text-xs font-semibold uppercase tracking-wider">Desserts</span>
+                            <h4 class="text-cream font-serif font-bold text-lg">Strawberry Gateau</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nostalgia Wall / Customer Reviews -->
+    <section id="reviews" class="py-20 lg:py-28 bg-cream border-t border-caramel/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-terracotta font-medium text-sm tracking-widest uppercase">Letters From Bhilai Patrons</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-mocha mt-2 mb-4">The Nostalgia Wall</h2>
+                <p class="text-cocoa/80 text-base">Hear from the generations who grew up with the aroma of Dubey Bakery.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="glass-card p-8 rounded-2xl relative flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-caramel mb-4 flex gap-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-cocoa/90 italic mb-6 leading-relaxed">
+                        "I used to stop by Dubey Bakery every single evening after school in Sector 4 for their veg patties. 20 years later, I still order my daughter's birthday cake from here. The taste has never changed!"
+                    </p>
+                    <div class="border-t border-caramel/20 pt-4 flex items-center justify-between">
+                        <div>
+                            <h5 class="font-serif font-bold text-mocha">Anurag Sharma</h5>
+                            <span class="text-xs text-cocoa/60">Bhilai Resident since 1988</span>
+                        </div>
+                        <i data-lucide="heart" class="w-5 h-5 text-terracotta/60"></i>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-card p-8 rounded-2xl relative flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-caramel mb-4 flex gap-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-cocoa/90 italic mb-6 leading-relaxed">
+                        "Their Atta Biscuits and Nankhatai are a staple in our home for morning tea. No fancy brand can match the freshness and pure butter aroma of Dubey Bakery near SBI Bank."
+                    </p>
+                    <div class="border-t border-caramel/20 pt-4 flex items-center justify-between">
+                        <div>
+                            <h5 class="font-serif font-bold text-mocha">Priya Verma</h5>
+                            <span class="text-xs text-cocoa/60">Sector 6, Bhilai</span>
+                        </div>
+                        <i data-lucide="heart" class="w-5 h-5 text-terracotta/60"></i>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-card p-8 rounded-2xl relative flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-caramel mb-4 flex gap-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-cocoa/90 italic mb-6 leading-relaxed">
+                        "Ordered a custom pineapple fresh cream cake over WhatsApp. It was delivered right on time, soft, fluffy and extremely delicious. Highly recommend!"
+                    </p>
+                    <div class="border-t border-caramel/20 pt-4 flex items-center justify-between">
+                        <div>
+                            <h5 class="font-serif font-bold text-mocha">Rajesh Gupta</h5>
+                            <span class="text-xs text-cocoa/60">Civic Center, Bhilai</span>
+                        </div>
+                        <i data-lucide="heart" class="w-5 h-5 text-terracotta/60"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="py-20 lg:py-28 bg-vanilla relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+
+                <!-- Details Column -->
+                <div class="space-y-8 flex flex-col justify-between">
+                    <div>
+                        <span class="text-terracotta font-medium text-sm tracking-widest uppercase">Visit Our Bakehouse</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-mocha mt-2 mb-4">Location & Timings</h2>
+                        <p class="text-cocoa/80 text-base">We are conveniently located in the heart of Sector 4, Bhilai. Drop in for fresh morning bakes or evening snacks!</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-cream border border-caramel/20">
+                            <div class="w-12 h-12 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-mocha text-lg">Store Address</h4>
+                                <p class="text-cocoa/80 mt-1 text-sm sm:text-base">
+                                    Near SBI Bank, Sector 4, Bhilai, Chhattisgarh 490001
+                                </p>
+                                <a href="https://www.google.com/maps/place/Dubey+Bakery/@21.1937122,81.3613628,17z/" target="_blank" class="inline-flex items-center gap-1 text-terracotta text-xs font-semibold mt-2 hover:underline">
+                                    View on Google Maps <i data-lucide="external-link" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-cream border border-caramel/20">
+                            <div class="w-12 h-12 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-mocha text-lg">Opening Hours</h4>
+                                <p class="text-cocoa/80 mt-1 text-sm sm:text-base">
+                                    Monday – Sunday: <span class="font-semibold text-mocha">8:30 AM – 10:30 PM</span>
+                                </p>
+                                <p class="text-xs text-emerald-700 mt-1 font-medium">Open 7 Days a Week</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone / WhatsApp -->
+                        <div class="flex items-start gap-4 p-5 rounded-2xl bg-cream border border-caramel/20">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                                <i data-lucide="phone-call" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-mocha text-lg">Phone & WhatsApp Orders</h4>
+                                <p class="text-cocoa/80 mt-1 text-sm sm:text-base">
+                                    +91 88273 70555
+                                </p>
+                                <div class="flex gap-3 mt-3">
+                                    <a href="tel:+918827370555" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-mocha text-cream text-xs font-medium hover:bg-terracotta transition-colors">
+                                        <i data-lucide="phone" class="w-3.5 h-3.5"></i> Direct Call
+                                    </a>
+                                    <a href="https://wa.me/918827370555?text=Hello%20Dubey%20Bakery!" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-700 text-white text-xs font-medium hover:bg-emerald-800 transition-colors">
+                                        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Frame / Card -->
+                <div class="rounded-3xl overflow-hidden border-2 border-caramel/20 shadow-xl min-h-[380px] bg-cream flex flex-col relative">
+                    <iframe 
+                        title="Dubey Bakery Location Map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.827329123842!2d81.3613628!3d21.1937122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a29233d5069529f%3A0xdbce022bbe631a95!2sDubey%20Bakery!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        class="w-full h-full min-h-[350px] border-0 flex-1" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="p-4 bg-cream border-t border-caramel/20 text-center text-xs text-cocoa/70">
+                        Located near SBI Bank, Sector 4, Bhilai
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-mocha text-cream py-12 border-t border-caramel/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-cream/10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-terracotta text-cream flex items-center justify-center font-serif text-xl font-bold">
+                        D
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl font-bold text-cream block leading-tight">Dubey Bakery</span>
+                        <span class="text-xs text-caramel">Bhilai's Heritage Bakery • Est. 1970</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-cream/70">
+                    <a href="#about" class="hover:text-caramel transition-colors">Our Story</a>
+                    <a href="#menu" class="hover:text-caramel transition-colors">Menu</a>
+                    <a href="#gallery" class="hover:text-caramel transition-colors">Gallery</a>
+                    <a href="#order" class="hover:text-caramel transition-colors">Custom Orders</a>
+                    <a href="#contact" class="hover:text-caramel transition-colors">Location</a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/60">
+                <p>© <span id="current-year"></span> Dubey Bakery, Sector 4, Bhilai. All Rights Reserved.</p>
+                <p class="flex items-center gap-1">
+                    Crafted with <i data-lucide="heart" class="w-3.5 h-3.5 text-terracotta fill-current"></i> for Bhilai
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918827370555?text=Hello%20Dubey%20Bakery!%20I%20would%20like%20to%20place%20an%20order." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 flex items-center justify-center group"
+       title="Order on WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out text-sm font-medium pl-0 group-hover:pl-2">
+            Order on WhatsApp
+        </span>
+    </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-mocha/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-cream hover:text-caramel p-2">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="max-w-4xl w-full text-center">
+            <img id="lightbox-img" src="" alt="Enlarged view" class="max-h-[80vh] mx-auto rounded-2xl shadow-2xl object-contain">
+            <h3 id="lightbox-title" class="font-serif text-xl text-cream mt-4"></h3>
+        </div>
+    </div>
+
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when link clicked
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Sample Menu Items Data
+        const menuItems = [
+            {
+                name: "Fresh Cream Pineapple Cake",
+                category: "cakes",
+                price: "₹350 / 0.5kg",
+                description: "Classic moist sponge layer with rich cream and juicy crushed pineapple bits.",
+                badge: "Best Seller",
+                image: "https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                name: "Rich Chocolate Fudge Cake",
+                category: "cakes",
+                price: "₹420 / 0.5kg",
+                description: "Decadent dark chocolate sponge layered with smooth chocolate ganache.",
+                badge: "Popular",
+                image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                name: "Classic Black Forest Pastry",
+                category: "cakes",
+                price: "₹60 / pc",
+                description: "Nostalgic cherry topped cocoa pastry with fresh vanilla whipped cream.",
+                badge: "Nostalgic",
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                name: "Handcrafted Atta Biscuits",
+                category: "biscuits",
+                price: "₹180 / 500g",
+                description: "Traditional whole wheat tea-time biscuits baked with cardamom and pure ghee.",
+                badge: "Heritage Recipe",
+                image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                name: "Golden Nankhatai",
+                category: "biscuits",
+                price: "₹200 / 500g",
+                description: "Melt-in-your-mouth classic Indian shortbread cookies.",
+                badge: "Since 1970",
+                image: "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                name: "Bakery Butter Cookies",
+                category: "biscuits",
+                price: "₹220 / 500g",
+                description: "Rich, crumbly butter cookies perfect with your evening tea.",
+                badge: "Fresh Baked",
+                image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                name: "Crispy Veg Patties",
+                category: "savory",
+                price: "₹25 / pc",
+                description: "Flaky golden puff pastry stuffed with spiced potato and pea filling.",
+                badge: "Bhilai Favorite",
+                image: "https://images.unsplash.com/photo-1621236378699-8597faf6a176?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                name: "Paneer Tikka Roll",
+                category: "savory",
+                price: "₹45 / pc",
+                description: "Soft baked savory dough roll packed with seasoned paneer.",
+                badge: "Hot Snack",
+                image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                name: "Cheese Garlic Bread",
+                category: "savory",
+                price: "₹90 / pack",
+                description: "Fresh loaf toasted with herb garlic butter and melted cheese.",
+                badge: "Snack Time",
+                image: "https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                name: "Handcrafted Chocolates Pack",
+                category: "gifts",
+                price: "₹250 / box",
+                description: "Assorted praline and truffle artisan chocolates.",
+                badge: "Gift Special",
+                image: "https://images.unsplash.com/photo-1548907040-4baa42d10919?q=80&w=500&auto=format&fit=crop"
+            },
+            {
+                name: "Festive Sweet & Snack Hamper",
+                category: "gifts",
+                price: "₹750 / hamper",
+                description: "Curated gift box with cookies, chocolates, and savory bites.",
+                badge: "Celebration",
+                image: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=500&auto=format&fit=crop"
+            }
+        ];
+
+        // Render Menu Function
+        function renderMenu(items) {
+            const grid = document.getElementById('menu-grid');
+            grid.innerHTML = items.map(item => `
+                <div class="bg-cream rounded-2xl overflow-hidden border border-caramel/20 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-terracotta text-cream text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow">
+                                ${item.badge}
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="font-serif font-bold text-mocha text-lg leading-snug">${item.name}</h3>
+                            </div>
+                            <p class="text-cocoa/70 text-xs sm:text-sm line-clamp-2 mb-4">${item.description}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-caramel/10 mt-auto">
+                        <span class="font-bold text-terracotta text-sm">${item.price}</span>
+                        <a href="https://wa.me/918827370555?text=Hello%20Dubey%20Bakery!%20I%20would%20like%20to%20order%20${encodeURIComponent(item.name)}" 
+                           target="_blank" 
+                           class="inline-flex items-center gap-1.5 text-xs font-semibold bg-emerald-700 hover:bg-emerald-800 text-white px-3 py-2 rounded-lg transition-colors">
+                            <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i> Order
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+
+            // Re-bind lucide icons after dynamic HTML injection
+            lucide.createIcons();
+        }
+
+        // Initial Menu Render
+        renderMenu(menuItems);
+
+        // Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-terracotta', 'text-cream');
+                    b.classList.add('bg-cream', 'text-cocoa');
+                });
+                btn.classList.add('active', 'bg-terracotta', 'text-cream');
+                btn.classList.remove('bg-cream', 'text-cocoa');
+
+                const filter = btn.getAttribute('data-filter');
+                if (filter === 'all') {
+                    renderMenu(menuItems);
+                } else {
+                    const filtered = menuItems.filter(item => item.category === filter);
+                    renderMenu(filtered);
+                }
+            });
+        });
+
+        // Lightbox Functions
+        function openLightbox(src, title) {
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-title').textContent = title;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        }
+
+        // Custom Cake Order Generator Form Handler
+        document.getElementById('cake-order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const flavor = document.getElementById('cake-flavor').value;
+            const size = document.getElementById('cake-size').value;
+            const message = document.getElementById('cake-message').value || "None specified";
+            const date = document.getElementById('cake-date').value || "As soon as possible";
+            const notes = document.getElementById('cake-notes').value || "None";
+
+            const textMessage = `Hello Dubey Bakery! 👋\n\nI would like to query/order a Custom Cake:\n\n🎂 *Flavor:* ${flavor}\n⚖️ *Size:* ${size}\n✍️ *Message on Cake:* ${message}\n📅 *Required Date:* ${date}\n📝 *Special Notes:* ${notes}\n\nPlease confirm availability and price!`;
+
+            const encodedText = encodeURIComponent(textMessage);
+            window.open(`https://wa.me/918827370555?text=${encodedText}`, '_blank');
+        });
+    </script>
+</body>
+</html>
